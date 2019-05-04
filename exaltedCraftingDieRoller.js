@@ -16,11 +16,21 @@ function rollPool(hash) {
   if (hash.supremeMasterworkFocus) { sucAry[9] = 2; }
   if (hash.supremeMasterworkFocusRepurchase) { sucAry[8] = sucAry[9] = 2; }
   if (hash.supremeMasterworkFocus2ndRepurchase) { sucAry[7] = sucAry[8] = sucAry[9] = 2; }
-
+  
+  if (hash.strikeTheDragonAnvil) {sucAry [9] = 2; }
+  if (hash.strikeTheDragonAnvilRepurchase) { sucAry[8] = sucAry[9] = 2; }
+  
+  if (hash.lunarfullExcellency) {
+	if (hash.wonderWeavingArt) { sucAry[9] = 2; }
+	if (hash.wonderWeavingArtRepurchase) { sucAry[8] = sucAry[9] = 2; }
+	if (hash.wonderWeavingArt2ndRepurchase) { sucAry[7] = sucAry[8] = sucAry[9] = 2; }
+  }
+  
   var FMDNeedToConvert = 0;
   var FMDAvailFailures = 0;
   var HMUsucCount = 0;
   var HMUCurrentDieFromDTI = 0;
+  var EssenceLimit = hash.essence;
 
   if (hash.SHTperAttempt) {
     hash.SHTperAttempt = 0;
@@ -50,7 +60,12 @@ function rollPool(hash) {
 
     if (hash.flawlessHandiworkRepurchase && die == 6) { poolSize += 1; }
     if (hash.flawlessHandiworkMethod && die == 0) { poolSize += 1; }
-
+	if (hash.flawlessFacetRealization && (EssenceLimit >= 1) && (2 >= die && die <= 6)) {
+		{ poolSize += 1; }
+		EssenceLimit--;
+		}
+	if (hash.blazingDragonSmithArete && die == 0) { poolSize += 1; }
+	
     if (hash.holisticMiracleUnderstanding && HMUCurrentDieFromDTI && HMUsucCount < 3 && (die == 0 || die >= 7)) {
       HMUsucCount++;
       if (HMUsucCount == 3) { poolSize += 3}
