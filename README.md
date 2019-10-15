@@ -1,3 +1,7 @@
+## Edits to add Dragon-Blooded and Lunar Charms to Wise Artificer's Insight
+
+
+
 ## Wise Artificer's Insight
 Wise Artificer's Insight is designed to give a player thinking about making an Artifact or other complex project in [Exalted 3rd Edition](http://theonyxpath.com/category/worlds/exalted/) some insight into their likelihood of success.  A master craftsman of any discipline has awareness of their skill and should be able to judge what projects are trivial for them or beyond their skills.  This can be difficult because of the complex die manipulation powers available to Solars in Exalted 3rd Edition.  This program provides the crafter insight into their level of skill by providing a basic statistical analysis on a large number of crafting attempts.
 
