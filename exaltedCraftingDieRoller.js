@@ -25,6 +25,19 @@ function rollPool(hash) {
 	if (hash.wonderWeavingArtRepurchase) { sucAry[8] = sucAry[9] = 2; }
 	if (hash.wonderWeavingArt2ndRepurchase) { sucAry[7] = sucAry[8] = sucAry[9] = 2; }
   }
+	
+  if (hash.elegantPatternsofFate) {sucAry [9] = 2; }
+  if (hash.elegantPatternsofFateRepurchase) { sucAry[8] = 2; }
+  
+  if (hash.siderealFullExcellency) {
+	if  ( hash.craftAbility = 5 ) { sucAry[6] = sucAry[5] = sucAry[4] = 1; }
+	if	( hash.craftAbility = 4 ) { sucAry[6] = sucAry[5] = 1; }
+	if	( hash.craftAbility = 3 ) { sucAry[6] = sucAry[5] = 1; }
+	if	( hash.craftAbility = 2 ) { sucAry[6] = 1; }
+	if	( hash.craftAbility = 1 ) { sucAry[6] = 1; }
+  }
+
+
   
   var FMDNeedToConvert = 0;
   var FMDAvailFailures = 0;
@@ -57,7 +70,7 @@ function rollPool(hash) {
         FMDAvailFailures--;
       }
     }
-
+ 
     if (hash.flawlessHandiworkRepurchase && die == 6) { poolSize += 1; }
     if (hash.flawlessHandiworkMethod && die == 0) { poolSize += 1; }
 	if (hash.flawlessFacetRealization && (EssenceLimit >= 1) && (2 >= die && die <= 6)) {
@@ -79,6 +92,7 @@ function rollPool(hash) {
   }
 
   if (hash.unbrokenImageFocus) { successes += hash.essence + resultAry[7] + resultAry[8] + resultAry[9] + resultAry[0]*2; }
+
 
   if (successes  < hash.difficulty ) {
     if (successes < 1 && resultAry[1] > 0) {

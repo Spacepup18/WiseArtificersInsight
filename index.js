@@ -8,7 +8,7 @@ function fetchResultsJS(theForm,event) {
                           "firstMovementOfTheDemiurge", "breachHealingMethod", "divineInspirationTechnique", "mindExpandingMeditation", "realizingTheFormSupernal",
                           "holisticMiracleUnderstanding", "horizonUnveilingInsight", "sunHeartTenacity", "dbcraftSpeciality", "dbfullExcellency", "stonesFromRubbleRestoration",
 						  "flawlessFacetRealization", "strikeTheDragonAnvil", "eternalOmphalosForge", "blazingDragonSmithArete", "strikeTheDragonAnvilRepurchase", "lunarfullExcellency",
-						  "wonderWeavingArt", "wonderWeavingArtRepurchase", "wonderWeavingArt2ndRepurchase", "silverCrucibleRefinement", "unboundDemiergesDream"];
+						  "wonderWeavingArt", "wonderWeavingArtRepurchase", "wonderWeavingArt2ndRepurchase", "silverCrucibleRefinement", "unboundDemiergesDream", "siderealFullExcellency", "elegantPatternsofFate", "elegantPatternsofFateRepurchase", "mendingWarpedDesigns"];
 
   const returnFloatArray = ["meanSuc", "stdDevSuc", "percentSuc"];
   const returnIntegerArray = ["medianSuc","initialPoolSize"];
@@ -23,6 +23,7 @@ function fetchResultsJS(theForm,event) {
                         + hash.wordsAsWorkshopMethod
                         + hash.storytellerDice;
   if(hash.lunarfullExcellency) { hash.initialPoolSize += ( hash.craftAttribute + hash.lunarcraftAttribute ); }
+  if(hash.siderealFullExcellency) { hash.initialPoolSize += ( hash.essence ); }
   if(hash.ess >= 3 && hash.experientialConjuringOfTrueVoid) { hash.initialPoolSize += hash.intelligence; }
   if(hash.breachHealingMethod) { hash.difficulty--; }
   if(hash.stonesFromRubbleRestoration)	{ hash.initialPoolSize += (Math.floor(hash.essence/2)); }
@@ -44,6 +45,8 @@ function fetchResultsJS(theForm,event) {
     hash.difficulty--;
     hash.targetThreshold -= hash.intelligence*hash.essence;
   }
+  
+  if(hash.mendingWarpedDesigns) {hash.initialPoolSize += (Math.round(hash.essence/2)); }
 
   if(hash.difficulty < 0) { hash.difficulty = 0; }
 
