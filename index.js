@@ -24,7 +24,7 @@ function fetchResultsJS(theForm,event) {
                         + hash.storytellerDice;
   if(hash.lunarfullExcellency) { hash.initialPoolSize += ( hash.craftAttribute + hash.lunarcraftAttribute ); }
   if(hash.siderealFullExcellency) { hash.initialPoolSize += ( hash.essence ); }
-  if(hash.ess >= 3 && hash.experientialConjuringOfTrueVoid) { hash.initialPoolSize += hash.intelligence; }
+  if(hash.essence >= 3 && hash.experientialConjuringOfTrueVoid) { hash.initialPoolSize += hash.intelligence; }
   if(hash.breachHealingMethod) { hash.difficulty--; }
   if(hash.stonesFromRubbleRestoration)	{ hash.initialPoolSize += (Math.floor(hash.essence/2)); }
   if(hash.blazingDragonSmithArete) { 
